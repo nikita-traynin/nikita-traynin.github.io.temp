@@ -5,7 +5,7 @@ description:        Nikita Traynin's website. Shows my projects and interests.
 reading_time:       true
 words_per_minute:   200
 logo:               'assets/img/logo.png'
-background:         assets/img/light-gray-baackground.png
+background:         assets/img/light-gray-background.png
 tiled_bg:           true   # Set this true if you want to tile your background image, otherwise it will be covered
 locale:             en_US
 url:                https://nikita-traynin.github.io
