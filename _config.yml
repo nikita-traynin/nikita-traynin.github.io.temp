@@ -11,7 +11,7 @@ locale:             en_US
 url:                https://nikita-traynin.github.io
 
 collections:
-    - interests
+  - interests
 
 # Jekyll
 permalink:          /:title/
