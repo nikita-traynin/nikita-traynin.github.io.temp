@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <circle style="stroke-width: 15px; paint-order: fill; fill: rgb(255, 255, 255); stroke: rgb(0, 0, 0);" cx="228.291" cy="242.577" r="242" transform="matrix(1, 0.00005, -0.00005, 1.000001, 21.721105, 7.411264)" bx:origin="0.5 0.5"/>
+  <line style="stroke-width: 31px; stroke: rgb(0, 0, 0);" x1="115" y1="150.001" x2="215.003" y2="249.997" transform="matrix(1, 0.000035, -0.000035, 1, 0.005685, -0.005015)"/>
+  <line style="stroke-width: 31px; stroke: rgb(0, 0, 0);" x1="115.001" y1="350.002" x2="225.997" y2="238.999" transform="matrix(1, 0.000035, -0.000035, 1, 0.011414, -0.006479)"/>
+  <line style="stroke-width: 31px; stroke: rgb(0, 0, 0);" x1="264" y1="350" x2="395" y2="350"/>
+</svg>
