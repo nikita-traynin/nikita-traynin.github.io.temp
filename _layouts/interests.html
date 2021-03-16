@@ -22,6 +22,8 @@ layout: compress
                     </a>
                 </div>
                 {% for interest in site.interests %}
+                <div>{{ interest.collection }}</div>
+                <div>{{ interest.path }}</div>
                     <ul>
                         <li class="wow fadeInLeft" data-wow-duration="1.5s">
                             <div class="zoombtn">{{ interest.title }}</div>
