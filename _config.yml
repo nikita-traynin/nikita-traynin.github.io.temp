@@ -2,7 +2,7 @@
 title:              Nikita Traynin
 bio:                A data science nerd studying at UTD.
 description:        Nikita Traynin's website. Shows my projects and interests.
-reading_time:       true
+reading_time:       false
 words_per_minute:   200
 logo:               logo.svg
 background:         assets/img/light-gray-background.png
@@ -10,8 +10,9 @@ tiled_bg:           true   # Set this true if you want to tile your background i
 locale:             en_US
 url:                https://nikita-traynin.github.io
 
+# Collections
 collections:
-  - interests
+  interests:
 
 # Jekyll
 permalink:          /:title/
