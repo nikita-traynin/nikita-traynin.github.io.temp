@@ -6,6 +6,7 @@ tags: [C, Numerical Computing, Differential Equations, Physics, Simulation, Chao
 ---
 #### This is project I finished back in 2017. I decided to revisit it so I could clean up the code, split it up into more files, and document the whole project a bit better.
 
+## Introduction
 A single pendulum is a simple system. It displays simple harmonic motion - commonly taught in introductory physics courses. Just imagine a ball hanging by a string from the ceiling, and dropping the ball from a certain height. The ball will simply swing back and forth. In real life, it would eventually slow down and settle in the middle due to air resistance. But if we assume no air resistance or other non-conservative forces, then the ball will continue swinging periodically with the same amplitude. Nice and simple!
 <br/><br/>
 
@@ -26,7 +27,10 @@ The double pendulum is the quintessential example of **[chaotic motion](https://
 <br/><br/>
 
 
-To make matters "worse" (interesting), the equations of motion of this system cannot be solved analytically. Although there exist analytic chaotic maps, this one is not. We have to discretize the time variable and numerically compute the solution. There are various ways of doing this, but I have chosen the [Runge-Kutta method](https://en.wikipedia.org/wiki/Runge–Kutta_methods) (specifically RK4), as it is very popular and a good middle ground between performance and accuracy.
+To make matters "worse" (interesting), the equations of motion of this system cannot be solved analytically. Although there exist analytic chaotic maps, this one is not. We have to discretize the time variable and numerically compute the solution.
+
+## Analysis
+There are various ways of doing this, but I have chosen the [Runge-Kutta method](https://en.wikipedia.org/wiki/Runge–Kutta_methods) (specifically RK4), as it is very popular, and a good middle ground between performance and accuracy.
 <br/><br/>
 {% highlight c %}
 //sets the step size for the temporal discretization
@@ -78,9 +82,9 @@ double t;
 The idea behind this is that we originally had two coupled force equations for the two masses in our diagram. Since these have an acceleration term from the gravity, they are second order. To put the equations in the proper format for Runge Kutta, we split them up into two first order ODEs each, leaving us with a system of four ODEs.
 <br/><br/>
 
-
+### Algorithm calculating trajectory
 Now, here is the loop in which we simulate:
-{% highlight c linenos %}
+{% highlight c %}
 {% raw %}
 //begin the simulation
 while (1)
@@ -126,7 +130,7 @@ You will notice line 15 is where we test to see if either pendulums have flipped
 {% raw %} (as[i] - 2&pi;, as[i] + 2&pi;) and (cs[j] - 2&pi;, cs[j] + 2&pi;), where as[i] is the ith initial &theta;<sub>1</sub> and cs[j] {% endraw %} is the jth initial &theta;<sub>2</sub>.
 <br/><br/>
 
-
+## Visualization
 Lastly, we get the simulated results and draw the graph:
 {% highlight c %}
 printf("DONE SIMULATING");
@@ -138,7 +142,7 @@ return;
 The draw_graph function creates a pixmap file in the directory in [ppm format](https://en.wikipedia.org/wiki/Netpbm#File_formats). Since we are calculating each pixel individually, this is a natural format. **Note:** Creating a graph of any decent quality will take a long time; the biggest one I created took more than a whole night - 12 hours or so if I recall correctly. This is not something that can be simply optimized away as far as I know - the problem is a naturally computationally intensive task. But take a look at this awesome picture; surely it is worth it.
 <br/><br/>
 
-<img src="/assets/img/DoublePendulum/BigFlipTimeGraph.png" style="width:600px;height:600px;margin:120px;">
+<img src="/assets/img/DoublePendulum/BigFlipTimeGraph.png" style="margin: 50px;max-width: calc(100% - 100px);height: auto;">
 <br/>
 
 The warmer colors like reds and yellows indicate a longer time to flip and cooler colors like blues and greens indicate a shorter time. There are some interesting things in this image. First of all, the big red chunk in the bottom left quadrant. We can actually deduce this exact region mathematically, since in this area there is not enough energy for the pendulum to flip no matter how long the simulation runs. In fact, one little optimization I've done in the code is to not run the simulation if we are in this region - which is when 3cos&theta;<sub>1</sub> + cos&theta;<sub>2</sub> > 2.
@@ -158,7 +162,7 @@ Furthermore, there seem to be "smooth" and "rough" areas. When zooming in on the
 <br/><br/>
 
 
-Lastly, I've included a second routine in the file error_graph.c. This method generates a similar graph but rather than timing the first flip of the pendulum, it runs the simulation for the full time allowed and calculates the final energy error. Since this system is chaotic, and we are using an approximate method, we know that after a certain amount of time our simulation is useless. We have no way of knowing how far our solution is from the unknown true position of the pendulum. However, we can calculate the energy precisely at every position. If the energy of our system changes drastically, this is an indicator that we've deviated far from the true solution. However, this is a very hacked and imprecise assessment since two very different positions/velocities may have similar total energies. Either way, knowing where the energy deviates a lot may be interesting.
+Lastly, I've included a second routine in the file error_graph.c. This method generates a similar graph but rather than timing the first flip of the pendulum, it runs the simulation for the full time allowed and calculates the final energy error. Since this system is chaotic, and we are using an approximate method, we know that after a certain amount of time our simulation is useless. We have no way of knowing how far our solution is from the unknown true position of the pendulum. However, we can calculate the energy precisely at every position. If the energy of our system changes drastically, this is an indicator that we've deviated far from the true solution. However, this is a very hacked and imprecise assessment since two very different positions/velocities may have similar total energies. Either way, knowing where the energy deviates may be interesting.
 
 
 
