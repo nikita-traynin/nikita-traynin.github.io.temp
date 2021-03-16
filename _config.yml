@@ -10,6 +10,9 @@ tiled_bg:           true   # Set this true if you want to tile your background i
 locale:             en_US
 url:                https://nikita-traynin.github.io
 
+collections:
+    - interests
+
 # Jekyll
 permalink:          /:title/
 markdown:           kramdown

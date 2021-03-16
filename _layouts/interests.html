@@ -21,11 +21,12 @@ layout: compress
                         <i class="fa fa-chevron-left"></i>
                     </a>
                 </div>
-                {% for interest in site.posts.interests %}
+                {% for interest in site.interests %}
                     <ul>
                         <li class="wow fadeInLeft" data-wow-duration="1.5s">
                             <div class="zoombtn">{{ interest.title }}</div>
-                            <p>{{ interest.content }}</p>
+                            <img src="{{ site.url }}/assets/img/Interests/{{ interest.image.src }}" alt="{{ interest.image.alt }}">
+                            <p>{{ interest.description }}</p>
                         </li>
                     </ul>
                 {% endfor %}
