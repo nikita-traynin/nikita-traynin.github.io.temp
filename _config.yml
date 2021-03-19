@@ -1,14 +1,14 @@
 # Site
 title:              Nikita Traynin
-bio:                A data science nerd studying at UTD.
-description:        Nikita Traynin's website. Shows my projects and interests.
+bio:                Hi. I do things on computers.
+description:        My website. Shows my projects and interests.
 reading_time:       false
 words_per_minute:   200
 logo:               logo.svg
-background:         assets/img/light-gray-background.png
+background:         false # assets/img/light-gray-background.png
 tiled_bg:           true   # Set this true if you want to tile your background image, otherwise it will be covered
 locale:             en_US
-url:                https://nikita-traynin.github.io
+url:                # https://nikita-traynin.github.io
 
 # Collections
 collections:
@@ -42,7 +42,7 @@ disqus_shortname:   nikitatraynin
   #ad-slot:
 #bing-verify:
 #email:
-#twitter:            username
+twitter:            NTraynin
 facebook:           nikita.traynin
 github-url:         nikita-traynin
 #stackoverflow:     123456/username   from a "http://stackoverflow.com/users/123456/username" link
