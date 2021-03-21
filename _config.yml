@@ -8,8 +8,8 @@ logo:               logo.svg
 background:         false # assets/img/light-gray-background.png
 tiled_bg:           true   # Set this true if you want to tile your background image, otherwise it will be covered
 locale:             en_US
-url:                https://nikita-traynin.github.io
-baseurl:
+url:                # https://nikita-traynin.github.io
+baseurl:            /
 
 # Collections
 collections:
