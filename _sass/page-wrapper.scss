@@ -13,3 +13,8 @@ html {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+// cursor points when hovering over anchor, despite lack of href//
+.btn.zoombtn {
+    cursor: pointer;
+}
