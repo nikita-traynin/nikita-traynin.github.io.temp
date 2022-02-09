@@ -26,3 +26,12 @@
     {% if page.comments != false %}
         {% include disqus_comments.html %}
     {% endif %}
+
+    <!-- chatbot -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger
+      intent="WELCOME"
+      chat-title="NikitaBot"
+      agent-id="44e955d0-a8f9-4315-b1b4-58b9e71daf29"
+      language-code="en"
+    ></df-messenger>
