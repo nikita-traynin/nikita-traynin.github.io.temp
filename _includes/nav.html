@@ -10,7 +10,7 @@
 						<h4>{{ site.title }}</h4>
 						<p>{{ site.description }}</p>
 					</li>
-					<li><a href="{{ site.url }}/about/"><span class="btn btn-inverse">Learn More</span></a></li>
+					<li><a onclick="openPage('about');""><span class="btn btn-inverse">Learn More</span></a></li>
 					{% if site.email %}<li>
                         <a href="mailto:{{ site.email }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
                     </li>{% endif %}
@@ -88,8 +88,8 @@
 			<li>
 				<a href="#">Projects</a>
 				<ul class="dl-submenu">
-					<li><a href="{{ site.url }}/projects/">All Projects</a></li>
-					<li><a href="{{ site.url }}/tags/">All Tags</a></li>
+					<li><a onclick="openPage('projects');">All Projects</a></li>
+					<li><a onclick="openPage('tags');">All Tags</a></li>
 				</ul>
 			</li>
 			{% for link in site.data.navigation %}
@@ -98,7 +98,7 @@
 		        {% else %}
 		        {% assign domain = site.url %}
 		    {% endif %}
-		    <li><a href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.title }}</a></li>
+		    <li><a onclick="openPage('{{ link.name }}');" {% if link.url contains 'http' %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.title }}</a></li>
 		  {% endfor %}
 		</ul><!-- /.dl-menu -->
 	</nav><!-- /.dl-menuwrapper -->

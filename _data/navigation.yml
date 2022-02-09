@@ -1,7 +1,7 @@
 # Site navigation links
+# Jekyll stores this in site.data.navigation liquid variable
+# For every page except for home, about, and project. 
 
 - title: Interests
-  url: /interests/
-
-- title: Home
-  url: /
+  name: interests
+  url:
